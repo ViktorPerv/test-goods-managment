@@ -22,6 +22,7 @@ class RequestService
             (int) $params['length'],
             $orderBy,
             $orderDir,
+            $params['search']['value'],
             (int) $params['draw']
         );
     }

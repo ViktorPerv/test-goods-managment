@@ -11,6 +11,7 @@ use App\Service\RequestService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ProductController extends AbstractController
@@ -19,6 +20,16 @@ class ProductController extends AbstractController
         private ProductService $productService,
         private RequestService $requestService,
     ){}
+
+    /**
+     *
+     * @return Response
+     */
+    #[Route('/product', name: 'product')]
+    public function index(): Response
+    {
+        return $this->render('page/table.html.twig', []);
+    }
 
     #[Route('/product/load')]
     public function load(Request $request): JsonResponse

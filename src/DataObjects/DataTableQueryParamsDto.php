@@ -12,6 +12,7 @@ class DataTableQueryParamsDto
      * @param  int  $length
      * @param  string  $orderBy
      * @param  string  $orderDir
+     * @param  string  $searchTerm
      * @param  int  $draw
      */
     public function __construct(
@@ -19,6 +20,7 @@ class DataTableQueryParamsDto
         public int $length,
         public string $orderBy,
         public string $orderDir,
+        public string $searchTerm,
         public int $draw
     ) {
     }

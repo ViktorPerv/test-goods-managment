@@ -26,6 +26,10 @@ class ProductService
         $orderBy = in_array($dto->orderBy, ['name', 'description', 'weight', 'category']) ? $dto->orderBy : 'id';
         $orderDir = strtolower($dto->orderDir) === 'asc' ? 'asc' : 'desc';
 
+        if (! empty($dto->searchTerm)) {
+            $query->where('c.name LIKE :name')->setParameter('name', '%' . addcslashes($dto->searchTerm, '%_') . '%');
+        }
+
         $query->orderBy('c.' . $orderBy, $orderDir);
 
         return new Paginator($query);

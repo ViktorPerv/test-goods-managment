@@ -33,7 +33,6 @@ window.addEventListener('DOMContentLoaded', function () {
         serverSide: true,
         ajax: '/product/load',
         orderMulti: false,
-        searching: false,
         columns: [
             {data: "id"},
             {data: "name"},
