@@ -2,7 +2,7 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8">
-  <title>Dashboard for D:\Projects\Symfony\test-goods-managment\src\Controller</title>
+  <title>Dashboard for D:\Projects\Symfony\test-goods-managment\src\Entity</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="../_css/bootstrap.min.css?v=10.0.0" rel="stylesheet" type="text/css">
   <link href="../_css/nv.d3.min.css?v=10.0.0" rel="stylesheet" type="text/css">
@@ -17,7 +17,7 @@
       <nav aria-label="breadcrumb">
        <ol class="breadcrumb">
          <li class="breadcrumb-item"><a href="../index.html">D:\Projects\Symfony\test-goods-managment\src</a></li>
-         <li class="breadcrumb-item"><a href="index.html">Controller</a></li>
+         <li class="breadcrumb-item"><a href="index.html">Entity</a></li>
          <li class="breadcrumb-item active">(Dashboard)</li>
 
        </ol>
@@ -58,7 +58,7 @@
         </tr>
        </thead>
        <tbody>
-       <tr><td><a href="BaseController.php.html#15">App\Controller\BaseController</a></td><td class="text-right">9%</td></tr>
+       <tr><td><a href="Product.php.html#8">App\Entity\Product</a></td><td class="text-right">0%</td></tr>
 
        </tbody>
       </table>
@@ -112,7 +112,15 @@
         </tr>
        </thead>
        <tbody>
-       <tr><td><a href="BaseController.php.html#30"><abbr title="App\Controller\BaseController::load">load</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Product.php.html#28"><abbr title="App\Entity\Product::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Product.php.html#33"><abbr title="App\Entity\Product::getName">getName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Product.php.html#38"><abbr title="App\Entity\Product::setName">setName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Product.php.html#45"><abbr title="App\Entity\Product::getDescription">getDescription</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Product.php.html#50"><abbr title="App\Entity\Product::setDescription">setDescription</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Product.php.html#57"><abbr title="App\Entity\Product::getWeight">getWeight</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Product.php.html#62"><abbr title="App\Entity\Product::setWeight">setWeight</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Product.php.html#69"><abbr title="App\Entity\Product::getCategory">getCategory</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Product.php.html#74"><abbr title="App\Entity\Product::setCategory">setCategory</abbr></a></td><td class="text-right">0%</td></tr>
 
        </tbody>
       </table>
@@ -157,7 +165,7 @@ $(document).ready(function() {
       .yAxis.tickFormat(d3.format('d'));
 
     d3.select('#classCoverageDistribution svg')
-      .datum(getCoverageDistributionData([0,1,0,0,0,0,0,0,0,0,0,0], "Class Coverage"))
+      .datum(getCoverageDistributionData([1,0,0,0,0,0,0,0,0,0,0,0], "Class Coverage"))
       .transition().duration(500).call(chart);
 
     nv.utils.windowResize(chart.update);
@@ -175,7 +183,7 @@ $(document).ready(function() {
       .yAxis.tickFormat(d3.format('d'));
 
     d3.select('#methodCoverageDistribution svg')
-      .datum(getCoverageDistributionData([1,0,0,0,0,0,0,0,0,0,0,2], "Method Coverage"))
+      .datum(getCoverageDistributionData([9,0,0,0,0,0,0,0,0,0,0,0], "Method Coverage"))
       .transition().duration(500).call(chart);
 
     nv.utils.windowResize(chart.update);
@@ -225,7 +233,7 @@ $(document).ready(function() {
     chart.yAxis.axisLabel('Cyclomatic Complexity');
 
     d3.select('#classComplexity svg')
-      .datum(getComplexityData([[9.090909090909092,3,"<a href=\"BaseController.php.html#15\">App\\Controller\\BaseController<\/a>"]], 'Class Complexity'))
+      .datum(getComplexityData([[0,9,"<a href=\"Product.php.html#8\">App\\Entity\\Product<\/a>"]], 'Class Complexity'))
       .transition()
       .duration(500)
       .call(chart);
@@ -249,7 +257,7 @@ $(document).ready(function() {
     chart.yAxis.axisLabel('Method Complexity');
 
     d3.select('#methodComplexity svg')
-      .datum(getComplexityData([[100,1,"<a href=\"BaseController.php.html#17\">App\\Controller\\BaseController::__construct<\/a>"],[100,1,"<a href=\"BaseController.php.html#24\">App\\Controller\\BaseController::index<\/a>"],[0,1,"<a href=\"BaseController.php.html#30\">App\\Controller\\BaseController::load<\/a>"]], 'Method Complexity'))
+      .datum(getComplexityData([[0,1,"<a href=\"Product.php.html#28\">App\\Entity\\Product::getId<\/a>"],[0,1,"<a href=\"Product.php.html#33\">App\\Entity\\Product::getName<\/a>"],[0,1,"<a href=\"Product.php.html#38\">App\\Entity\\Product::setName<\/a>"],[0,1,"<a href=\"Product.php.html#45\">App\\Entity\\Product::getDescription<\/a>"],[0,1,"<a href=\"Product.php.html#50\">App\\Entity\\Product::setDescription<\/a>"],[0,1,"<a href=\"Product.php.html#57\">App\\Entity\\Product::getWeight<\/a>"],[0,1,"<a href=\"Product.php.html#62\">App\\Entity\\Product::setWeight<\/a>"],[0,1,"<a href=\"Product.php.html#69\">App\\Entity\\Product::getCategory<\/a>"],[0,1,"<a href=\"Product.php.html#74\">App\\Entity\\Product::setCategory<\/a>"]], 'Method Complexity'))
       .transition()
       .duration(500)
       .call(chart);

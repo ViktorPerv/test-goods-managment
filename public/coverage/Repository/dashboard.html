@@ -2,7 +2,7 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8">
-  <title>Dashboard for D:\Projects\Symfony\test-goods-managment\src\Controller</title>
+  <title>Dashboard for D:\Projects\Symfony\test-goods-managment\src\Repository</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="../_css/bootstrap.min.css?v=10.0.0" rel="stylesheet" type="text/css">
   <link href="../_css/nv.d3.min.css?v=10.0.0" rel="stylesheet" type="text/css">
@@ -17,7 +17,7 @@
       <nav aria-label="breadcrumb">
        <ol class="breadcrumb">
          <li class="breadcrumb-item"><a href="../index.html">D:\Projects\Symfony\test-goods-managment\src</a></li>
-         <li class="breadcrumb-item"><a href="index.html">Controller</a></li>
+         <li class="breadcrumb-item"><a href="index.html">Repository</a></li>
          <li class="breadcrumb-item active">(Dashboard)</li>
 
        </ol>
@@ -58,7 +58,7 @@
         </tr>
        </thead>
        <tbody>
-       <tr><td><a href="BaseController.php.html#15">App\Controller\BaseController</a></td><td class="text-right">9%</td></tr>
+       <tr><td><a href="ProductRepository.php.html#18">App\Repository\ProductRepository</a></td><td class="text-right">7%</td></tr>
 
        </tbody>
       </table>
@@ -75,6 +75,7 @@
         </tr>
        </thead>
        <tbody>
+       <tr><td><a href="ProductRepository.php.html#18">App\Repository\ProductRepository</a></td><td class="text-right">34</td></tr>
 
        </tbody>
       </table>
@@ -112,7 +113,9 @@
         </tr>
        </thead>
        <tbody>
-       <tr><td><a href="BaseController.php.html#30"><abbr title="App\Controller\BaseController::load">load</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ProductRepository.php.html#25"><abbr title="App\Repository\ProductRepository::save">save</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ProductRepository.php.html#34"><abbr title="App\Repository\ProductRepository::remove">remove</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ProductRepository.php.html#43"><abbr title="App\Repository\ProductRepository::getPaginatedCategories">getPaginatedCategories</abbr></a></td><td class="text-right">0%</td></tr>
 
        </tbody>
       </table>
@@ -129,6 +132,8 @@
         </tr>
        </thead>
        <tbody>
+       <tr><td><a href="ProductRepository.php.html#25"><abbr title="App\Repository\ProductRepository::save">save</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="ProductRepository.php.html#34"><abbr title="App\Repository\ProductRepository::remove">remove</abbr></a></td><td class="text-right">6</td></tr>
 
        </tbody>
       </table>
@@ -175,7 +180,7 @@ $(document).ready(function() {
       .yAxis.tickFormat(d3.format('d'));
 
     d3.select('#methodCoverageDistribution svg')
-      .datum(getCoverageDistributionData([1,0,0,0,0,0,0,0,0,0,0,2], "Method Coverage"))
+      .datum(getCoverageDistributionData([3,0,0,0,0,0,0,0,0,0,0,1], "Method Coverage"))
       .transition().duration(500).call(chart);
 
     nv.utils.windowResize(chart.update);
@@ -225,7 +230,7 @@ $(document).ready(function() {
     chart.yAxis.axisLabel('Cyclomatic Complexity');
 
     d3.select('#classComplexity svg')
-      .datum(getComplexityData([[9.090909090909092,3,"<a href=\"BaseController.php.html#15\">App\\Controller\\BaseController<\/a>"]], 'Class Complexity'))
+      .datum(getComplexityData([[7.6923076923076925,6,"<a href=\"ProductRepository.php.html#18\">App\\Repository\\ProductRepository<\/a>"]], 'Class Complexity'))
       .transition()
       .duration(500)
       .call(chart);
@@ -249,7 +254,7 @@ $(document).ready(function() {
     chart.yAxis.axisLabel('Method Complexity');
 
     d3.select('#methodComplexity svg')
-      .datum(getComplexityData([[100,1,"<a href=\"BaseController.php.html#17\">App\\Controller\\BaseController::__construct<\/a>"],[100,1,"<a href=\"BaseController.php.html#24\">App\\Controller\\BaseController::index<\/a>"],[0,1,"<a href=\"BaseController.php.html#30\">App\\Controller\\BaseController::load<\/a>"]], 'Method Complexity'))
+      .datum(getComplexityData([[100,1,"<a href=\"ProductRepository.php.html#20\">App\\Repository\\ProductRepository::__construct<\/a>"],[0,2,"<a href=\"ProductRepository.php.html#25\">App\\Repository\\ProductRepository::save<\/a>"],[0,2,"<a href=\"ProductRepository.php.html#34\">App\\Repository\\ProductRepository::remove<\/a>"],[0,1,"<a href=\"ProductRepository.php.html#43\">App\\Repository\\ProductRepository::getPaginatedCategories<\/a>"]], 'Method Complexity'))
       .transition()
       .duration(500)
       .call(chart);
