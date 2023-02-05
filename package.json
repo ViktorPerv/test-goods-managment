@@ -1,0 +1,22 @@
+{
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "bootstrap": "^5.2.3",
+    "sass": "^1.58.0",
+    "sass-loader": "^13.0.0",
+    "webpack-notifier": "^1.15.0"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@symfony/stimulus-bridge": "^3.2.1",
+    "@symfony/webpack-encore": "^4.2.0"
+  },
+  "scripts": {
+    "dev-server": "encore dev-server",
+    "dev": "encore dev",
+    "watch": "encore dev --watch",
+    "build": "encore production --progress"
+  },
+  "version": "0.0.0"
+}
