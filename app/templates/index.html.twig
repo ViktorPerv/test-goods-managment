@@ -1,0 +1,30 @@
+{% extends'base.html.twig' %}
+{% block header %}
+    {% include('header.html.twig') %}
+{% endblock %}
+
+{% block body %}
+    <h1 class="h2">Загрузка продуктов в виде xml</h1>
+
+    <div class="content-body container text-center">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <form id="xmlUploader" class="row g-3 needs-validation" action="{{ url('product.upload') }}">
+                    <div class="input-group">
+                        <input type="file" class="form-control" id="productFile" aria-label="Upload" required>
+                        <button class="btn btn-outline-secondary" type="submit" id="xmlUpload">Загрузить</button>
+                        <div class="invalid-tooltip">Сообщение об ошибке</div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-md-6">
+                <div id="fileUploadProgress" class="progress d-none" role="progressbar" aria-label="loader" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated w-0">0%</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

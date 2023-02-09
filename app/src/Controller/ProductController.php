@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\Entity\Product;
-use App\Repository\ProductRepository;
 use App\Service\ProductService;
 use App\Service\RequestService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -31,13 +30,19 @@ class ProductController extends AbstractController
         return $this->render('page/table.html.twig', []);
     }
 
+    #[Route('/product/upload', name: 'product.upload')]
+    public function upload(Request $request): JsonResponse
+    {
+        dd('test upload', $request);
+    }
+
     #[Route('/product/load')]
     public function load(Request $request): JsonResponse
     {
         $params = $this->requestService->getTableQueryParameters($request);
         $products = $this->productService->getPaginatedProducts($params);
 
-        $totalProducts = $products->count();
+        $totalProducts = $products->count() ?? 0;
 
         $transformer = function (Product $product) {
             return [
