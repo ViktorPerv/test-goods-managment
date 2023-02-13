@@ -47,6 +47,9 @@
             "./migrations/.gitignore"
         ]
     },
+    "liip/test-fixtures-bundle": {
+        "version": "2.6.0"
+    },
     "phpunit/phpunit": {
         "version": "10.0",
         "recipe": {

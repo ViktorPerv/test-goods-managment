@@ -14,16 +14,16 @@ class RequestService
     {
         $params = $request->query->all();
 
-        $orderBy = $params['columns'][$params['order'][0]['column']]['data'];
-        $orderDir = $params['order'][0]['dir'];
+        $orderBy = $params['columns'][$params['order'][0]['column']]['data'] ?? 'asc';
+        $orderDir = $params['order'][0]['dir'] ?? 'id';
 
         return new DataTableQueryParamsDto(
             (int) $params['start'],
             (int) $params['length'],
             $orderBy,
             $orderDir,
-            $params['search']['value'],
-            (int) $params['draw']
+            $params['search']['value'] ?? '',
+            (int) $params['draw'] ?? '1'
         );
     }
 }

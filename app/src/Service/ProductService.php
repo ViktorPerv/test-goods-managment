@@ -35,4 +35,18 @@ class ProductService
         return new Paginator($query);
     }
 
+
+    public function getPrepareProductData(): \Closure
+    {
+        return function (Product $product) {
+            return [
+                'id'            => $product->getId(),
+                'name'          => $product->getName(),
+                'description'   => $product->getDescription(),
+                'weight'        => $product->getWeight(),
+                'category'      => $product->getCategory()
+            ];
+        };
+    }
+
 }

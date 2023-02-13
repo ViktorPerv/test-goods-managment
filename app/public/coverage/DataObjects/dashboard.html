@@ -2,7 +2,7 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8">
-  <title>Dashboard for D:\Projects\Symfony\test-goods-managment\app\src\Controller</title>
+  <title>Dashboard for D:\Projects\Symfony\test-goods-managment\app\src\DataObjects</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="../_css/bootstrap.min.css?v=10.0.0" rel="stylesheet" type="text/css">
   <link href="../_css/nv.d3.min.css?v=10.0.0" rel="stylesheet" type="text/css">
@@ -17,7 +17,7 @@
       <nav aria-label="breadcrumb">
        <ol class="breadcrumb">
          <li class="breadcrumb-item"><a href="../index.html">D:\Projects\Symfony\test-goods-managment\app\src</a></li>
-         <li class="breadcrumb-item"><a href="index.html">Controller</a></li>
+         <li class="breadcrumb-item"><a href="index.html">DataObjects</a></li>
          <li class="breadcrumb-item active">(Dashboard)</li>
 
        </ol>
@@ -111,7 +111,6 @@
         </tr>
        </thead>
        <tbody>
-       <tr><td><a href="ProductController.php.html#33"><abbr title="App\Controller\ProductController::upload">upload</abbr></a></td><td class="text-right">0%</td></tr>
 
        </tbody>
       </table>
@@ -156,7 +155,7 @@ $(document).ready(function() {
       .yAxis.tickFormat(d3.format('d'));
 
     d3.select('#classCoverageDistribution svg')
-      .datum(getCoverageDistributionData([0,0,0,0,0,0,0,0,0,0,1,1], "Class Coverage"))
+      .datum(getCoverageDistributionData([0,0,0,0,0,0,0,0,0,0,0,1], "Class Coverage"))
       .transition().duration(500).call(chart);
 
     nv.utils.windowResize(chart.update);
@@ -174,7 +173,7 @@ $(document).ready(function() {
       .yAxis.tickFormat(d3.format('d'));
 
     d3.select('#methodCoverageDistribution svg')
-      .datum(getCoverageDistributionData([1,0,0,0,0,0,0,0,0,0,0,4], "Method Coverage"))
+      .datum(getCoverageDistributionData([0,0,0,0,0,0,0,0,0,0,0,1], "Method Coverage"))
       .transition().duration(500).call(chart);
 
     nv.utils.windowResize(chart.update);
@@ -224,7 +223,7 @@ $(document).ready(function() {
     chart.yAxis.axisLabel('Cyclomatic Complexity');
 
     d3.select('#classComplexity svg')
-      .datum(getComplexityData([[100,1,"<a href=\"BaseController.php.html#11\">App\\Controller\\BaseController<\/a>"],[93.33333333333333,4,"<a href=\"ProductController.php.html#16\">App\\Controller\\ProductController<\/a>"]], 'Class Complexity'))
+      .datum(getComplexityData([[100,1,"<a href=\"DataTableQueryParamsDto.php.html#7\">App\\DataObjects\\DataTableQueryParamsDto<\/a>"]], 'Class Complexity'))
       .transition()
       .duration(500)
       .call(chart);
@@ -248,7 +247,7 @@ $(document).ready(function() {
     chart.yAxis.axisLabel('Method Complexity');
 
     d3.select('#methodComplexity svg')
-      .datum(getComplexityData([[100,1,"<a href=\"BaseController.php.html#16\">App\\Controller\\BaseController::index<\/a>"],[100,1,"<a href=\"ProductController.php.html#18\">App\\Controller\\ProductController::__construct<\/a>"],[100,1,"<a href=\"ProductController.php.html#27\">App\\Controller\\ProductController::index<\/a>"],[0,1,"<a href=\"ProductController.php.html#33\">App\\Controller\\ProductController::upload<\/a>"],[100,1,"<a href=\"ProductController.php.html#42\">App\\Controller\\ProductController::load<\/a>"]], 'Method Complexity'))
+      .datum(getComplexityData([[100,1,"<a href=\"DataTableQueryParamsDto.php.html#18\">App\\DataObjects\\DataTableQueryParamsDto::__construct<\/a>"]], 'Method Complexity'))
       .transition()
       .duration(500)
       .call(chart);

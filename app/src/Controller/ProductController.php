@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Entity\Product;
 use App\Service\ProductService;
 use App\Service\RequestService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -33,10 +32,15 @@ class ProductController extends AbstractController
     #[Route('/product/upload', name: 'product.upload')]
     public function upload(Request $request): JsonResponse
     {
-        dd('test upload', $request);
+        return new JsonResponse([
+            'status' => 'ok'
+        ]);
     }
 
-    #[Route('/product/load')]
+    /**
+     * @throws \Exception
+     */
+    #[Route('/product/load', name: 'product.sort')]
     public function load(Request $request): JsonResponse
     {
         $params = $this->requestService->getTableQueryParameters($request);
@@ -44,15 +48,7 @@ class ProductController extends AbstractController
 
         $totalProducts = $products->count() ?? 0;
 
-        $transformer = function (Product $product) {
-            return [
-                'id'            => $product->getId(),
-                'name'          => $product->getName(),
-                'description'   => $product->getDescription(),
-                'weight'        => $product->getWeight(),
-                'category'      => $product->getCategory()
-            ];
-        };
+        $transformer = $this->productService->getPrepareProductData();
 
         return $this->json(
             [
